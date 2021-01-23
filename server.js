@@ -22,7 +22,7 @@ class Company {
 }
 
 app.get("/api/users/new",(req,res) => {
-    return res.json({newUsers : User()});
+    return res.json({newUsers : new User()});
 });
 
 app.get("/api/companies/new",(req,res) => {
@@ -30,7 +30,7 @@ app.get("/api/companies/new",(req,res) => {
 });
 
 app.get("/api/user/company",(req,res) => {
-    return res.json({newUsers: new User()},{newComany: new Company()});
+    return res.json([{newUsers: new User()},{newComany: new Company()}]);
 });
 
 app.listen(3000,() => {
